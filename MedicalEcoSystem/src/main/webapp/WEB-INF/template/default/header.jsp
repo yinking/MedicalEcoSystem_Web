@@ -1,9 +1,6 @@
-
-	<div  style="margin-top: 15px">
+	<div  style="height: 33px;">
 	
 	
-				<p style="text-align: right">The time on the server is ${serverTime}.</p>
-	
-	
+				<p style="text-align: right;height: 33px;"> ${serverTime} </p>
 	
 	</div>
