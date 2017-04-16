@@ -13,4 +13,11 @@ public class HelloMyFinalController {
 		model.addAttribute("message", "lol hi...get my final started");
 		return "hello";
 	}
+
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String indexA(Model model) {
+		model.addAttribute("message", "lol hi...get my final started");
+		return "hello";
+	}
+
 }

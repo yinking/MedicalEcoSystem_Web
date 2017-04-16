@@ -17,25 +17,24 @@
 </head>
 <script type="text/javascript">
 	function mySubmit() {
-		var username = document.getElementById("username");
 		var btn = document.getElementById("btn");
 		var username = $.trim($('#username').val());
-		var pwd = $.trim($('#pwd').val());
+		var password = $.trim($('#password').val());
 
 		if (!username) {
-			alert ("please enter username.");
+			alert("please enter username.");
 			return;
 		}
 
-		if (!pwd) {
-			layer.aletr('please enter password.');
+		if (!password) {
+			alert('please enter password.');
 			return;
 		}
 
-		$('#mySubmit').submit();
+		$('#mySubmit').attr("action", "${ctx }/login").submit();
 	}
 
-	 $(function() {
+	$(function() {
 		document.onkeydown = function(e) {
 			var ev = document.all ? window.event : e;
 			if (ev.keyCode == 13) {
@@ -43,7 +42,7 @@
 			}
 		}
 
-	}); 
+	});
 </script>
 
 <body>
@@ -53,7 +52,7 @@
 			<h1>MedicalEcoSystem</h1>
 		</div>
 	</div>
-	</section>
+ 	</section>
 
 	<div class="container">
 		<div class="row">
@@ -64,16 +63,16 @@
 					</div>
 					<div class="panel-body">
 
-						<form method="post" id="mySubmit" action="${ctx }/login" onsubmit="return mySubmit()">
+						<form method="post" id="mySubmit" onsubmit="return mySubmit()">
 							<fieldset>
 								<div class="form-group">
 									<input class="form-control" placeholder="User Name"
-										name='username' id="username" type="text">
+										name='username' id="username" type="text" value="Inka">
 								</div>
 
 								<div class="form-group">
 									<input class="form-control" placeholder="Password"
-										name='password' type="password" value="">
+										name='password' type="password" id="password" value="inka">
 								</div>
 								<div class="form-group">
 									<label for="role" class="col-md-2 col-sm-2 control-label">Role</label>
@@ -84,15 +83,16 @@
 											<option value="teacher">Doctor</option>
 											<option value="admin">Admin</option>
 										</select>
-										
+
 									</div>
 								</div>
-								
+
 								<input class="btn btn-lg btn-success btn-block" type="submit"
 									value="Login">
 
 							</fieldset>
 						</form>
+
 					</div>
 				</div>
 			</div>
