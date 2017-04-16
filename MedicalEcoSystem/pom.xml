@@ -1,18 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>neu.ying</groupId>
-  <artifactId>MedicalEcoSystem</artifactId>
-  <version>0.0.1</version>
-  <packaging>war</packaging>
+	<groupId>neu.ying</groupId>
+	<artifactId>MedicalEcoSystem</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
 	<properties>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<org.springframework.version>4.1.7.RELEASE</org.springframework.version>
 
+
+
+		<apache.tiles.version>3.0.5</apache.tiles.version>
+		<slf4j.version>1.7.12</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
-	
-	
+
+
 	<build>
 		<plugins>
 			<plugin>
@@ -64,5 +69,56 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>1.8.0</version>
 		</dependency>
+		<!-- ***************** Tiles *************************************** -->
+
+		<!-- Apache Tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
+
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- ***************** Tiles *************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</dependencies>
 </project>

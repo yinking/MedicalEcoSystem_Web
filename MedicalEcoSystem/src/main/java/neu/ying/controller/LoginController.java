@@ -1,5 +1,9 @@
 package neu.ying.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -12,12 +16,18 @@ import neu.ying.dao.UserDao;
 @Controller
 public class LoginController {
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String index(Model model, HttpServletRequest request) {
+	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	public String login() {
+
+		return "login";
+	}
+
+	@RequestMapping(value = { "/login" }, method = RequestMethod.POST)
+	public String loginLogic(Model model, HttpServletRequest request) {
 
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username+"   ###  "+password);
+		System.out.println(username + "   ###  " + password);
 		UserDao dao = new UserDao();
 
 		if (dao.authenticate(username, password) == true) {
