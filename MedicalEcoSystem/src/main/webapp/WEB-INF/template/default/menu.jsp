@@ -1,4 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+
 <div class="menu">
 
 	<div class="col col-md-12">
@@ -11,24 +13,30 @@
 
 
 			<!-- New Compound -->
-			<a class="list-group-item" href="${ctx }/hello" target="contents">New
-				Compound</a>
+			<spring:url value="/newCompound" var="newCompound" htmlEscape="false" />
+			<a class="list-group-item" href="${newCompound}">New Compound</a>
+
 
 			<!-- Update Compound -->
-			<spring:url value="/home" var="homeUrl" htmlEscape="true" />
-			<a class="list-group-item" href="${homeUrl}">Update Compound</a>
+			<spring:url value="/updateCompound" var="updateCompound"
+				htmlEscape="true" />
+			<a class="list-group-item" href="${updateCompound}">Update
+				Compound</a>
 
 
 			<!-- New Drug  -->
-			<spring:url value="/about" var="aboutUrl" htmlEscape="true" />
-			<a class="list-group-item" href="${aboutUrl}">New Drug</a>
+			<spring:url value="/newDrug" var="newDrug" htmlEscape="true" />
+			<a class="list-group-item" href="${newDrug}">New Drug</a>
 
 
 			<!-- Update Drug  -->
-			<spring:url value="/about" var="aboutUrl" htmlEscape="true" />
-			<a class="list-group-item" href="${aboutUrl}">Update Drug</a>
+			<spring:url value="/updateDrug" var="updateDrug" htmlEscape="true" />
+			<a class="list-group-item" href="${updateDrug}">Update Drug</a>
+
+
 			<!-- Message Channel -->
-			<a class="list-group-item">Message Channel</a>
+			<spring:url value="/msgChannel" var="msgChannel" htmlEscape="true" />
+			<a class="list-group-item" href="${msgChannel}">Message Channel</a>
 			<!-- logout -->
 
 			<a class="list-group-item"

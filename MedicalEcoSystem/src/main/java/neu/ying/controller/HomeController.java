@@ -37,16 +37,6 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = { "/formTest" }, method = RequestMethod.POST)
-	public String formTest(HttpServletRequest request) {
-
-		
-		
-		
-		
-		
-
-		return "movie_main";
-	}
+	
 
 }

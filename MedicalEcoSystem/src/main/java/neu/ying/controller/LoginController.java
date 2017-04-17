@@ -40,7 +40,6 @@ public class LoginController {
 
 			} else {
 				System.out.println("Doctor");
-
 			}
 		}
 		System.out.println("lol");
