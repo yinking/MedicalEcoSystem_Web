@@ -9,8 +9,8 @@
 		<property name="hibernate.connection.username">MedicalEcoSystem</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 
-
 		<mapping class="neu.ying.entities.CompoundCatalog" />
+		<mapping class="neu.ying.entities.Compound" />
 		<mapping class="neu.ying.entities.User" />
 
 

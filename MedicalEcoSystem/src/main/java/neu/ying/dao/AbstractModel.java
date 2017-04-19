@@ -42,6 +42,8 @@ public abstract class AbstractModel<T> {
             tx.commit();
         } catch (HibernateException e) {
             tx.rollback();
+    		System.out.println(e.getMessage());
+
         }
         return objects;
     }

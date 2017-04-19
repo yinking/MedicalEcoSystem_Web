@@ -17,22 +17,37 @@
 
 .header {
 	text-align: center;
-	background-color: #BDBDAA;
 }
 
 .page {
-	min-height: 100%;
+	height: 50px;
+	overflow-y: scroll;
 	min-width: 100%;
 	position: relative;
 }
 
 .mainContent {
-	background-color: #E6E6E6;
+}
+
+
+
+.t_link {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	margin: 0 6px;
+	padding: 0 10px;
+	height: 28px;
+	line-height: 28px;
+	background-color: #fff;
+	border: 1px solid #e8e8e8;
+	border-radius: 14px;
+	font-size: 12px;
+	color: #666;
 }
 </style>
 </head>
 <body>
-
 
 
 	<table style="font-family: Arial" class="page">
@@ -51,7 +66,6 @@
 
 		</tr>
 	</table>
-
 
 
 </body>
