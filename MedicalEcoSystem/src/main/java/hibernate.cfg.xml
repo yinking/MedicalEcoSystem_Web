@@ -12,6 +12,8 @@
 		<mapping class="neu.ying.entities.CompoundCatalog" />
 		<mapping class="neu.ying.entities.Compound" />
 		<mapping class="neu.ying.entities.User" />
+		<mapping class="neu.ying.entities.Drug" />
+		<mapping class="neu.ying.entities.DrugCatalog" />
 
 
 

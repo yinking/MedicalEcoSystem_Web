@@ -19,11 +19,11 @@ import neu.ying.entities.CompoundCatalog;
 @Controller
 public class CompoundController {
 
-	@RequestMapping(value = { "/updateCompound" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/compoundList" }, method = RequestMethod.GET)
 	public ModelAndView updateCompound(Model model, HttpServletRequest request) {
 		List<Compound> compounds = new CompoundDao().findAll();
 		System.out.println(compounds.size() + "");
-		return new ModelAndView("update-compound", "compounds", compounds);
+		return new ModelAndView("compound-list", "compounds", compounds);
 	}
 
 	@RequestMapping(value = { "/newCompound" }, method = RequestMethod.GET)

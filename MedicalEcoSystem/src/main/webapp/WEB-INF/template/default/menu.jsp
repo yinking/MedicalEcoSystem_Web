@@ -13,24 +13,24 @@
 
 			<!-- New Compound -->
 			<spring:url value="/newCompound" var="newCompound" htmlEscape="false" />
-			<a class="list-group-item" href="${newCompound}">New Compound</a>
-
-
-			<!-- Update Compound -->
-			<spring:url value="/updateCompound" var="updateCompound"
-				htmlEscape="true" />
-			<a class="list-group-item" href="${updateCompound}">Update
+			<a class="list-group-item" href="${newCompound}">New/Edit
 				Compound</a>
+
+
+			<!--  Compound List -->
+			<spring:url value="/compoundList" var="compoundList"
+				htmlEscape="true" />
+			<a class="list-group-item" href="${compoundList}"> Compound List</a>
 
 
 			<!-- New Drug  -->
 			<spring:url value="/newDrug" var="newDrug" htmlEscape="true" />
-			<a class="list-group-item" href="${newDrug}">New Drug</a>
+			<a class="list-group-item" href="${newDrug}">New/Edit Drug</a>
 
 
-			<!-- Update Drug  -->
-			<spring:url value="/editCompound" var="updateDrug" htmlEscape="true" />
-			<a class="list-group-item" href="${updateDrug}">Update Drug</a>
+			<!-- Drug List  -->
+			<spring:url value="/drugList" var="drugList" htmlEscape="true" />
+			<a class="list-group-item" href="${drugList}">Drug List</a>
 
 
 			<!-- Message Channel -->
