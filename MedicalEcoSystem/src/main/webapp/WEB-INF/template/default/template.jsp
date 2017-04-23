@@ -2,12 +2,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
+<script src="${ctx }/static/js/jquery-1.8.3.min.js"
+	type="text/javascript"></script>
+	
 <title>Default tiles template</title>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<script src="${ctx }/static/plugins/layer/layer.js"></script>
+
+
 <style type="text/css">
 .leftMenu {
 	height: 500px;
@@ -27,9 +33,8 @@
 }
 
 .mainContent {
+	
 }
-
-
 
 .t_link {
 	display: inline-block;

@@ -1,5 +1,4 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <div class="menu">
 
@@ -30,7 +29,7 @@
 
 
 			<!-- Update Drug  -->
-			<spring:url value="/updateDrug" var="updateDrug" htmlEscape="true" />
+			<spring:url value="/editCompound" var="updateDrug" htmlEscape="true" />
 			<a class="list-group-item" href="${updateDrug}">Update Drug</a>
 
 
@@ -41,8 +40,8 @@
 
 			<a class="list-group-item"
 				style="text-align: center; background-color: lightcoral; color: whitesmoke; margin-top: 10px">Logout</a>
-				
-				
+
+
 		</div>
 	</div>
 

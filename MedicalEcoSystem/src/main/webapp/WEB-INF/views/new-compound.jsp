@@ -18,7 +18,8 @@
 							Name: </label>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded">
+								<input id="sno" type="text" class="form-control rounded"
+									value="${compound.name}" />
 							</div>
 						</div>
 					</div>
@@ -28,7 +29,8 @@
 						</label>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded">
+								<input id="sno" type="text" class="form-control rounded"
+									value="${compound.molecularStructure}" />
 							</div>
 						</div>
 					</div>
@@ -38,7 +40,8 @@
 						</label>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded">
+								<input id="sno" type="text" class="form-control rounded"
+									value="${compound.description}" />
 							</div>
 						</div>
 					</div>
@@ -47,11 +50,13 @@
 						<label for="sno" class="col-md-4 control-label">Catalog: </label>
 						<div class="form-group">
 
-							<select id="class" class="col-md-4 control-label">
+							<select name="col-md-4 control-label">
 								<c:forEach var="categ" items="${categories}">
-									<option value="${categ.name}">${categ.name}</option>
+									<option value="${categ.idCompoundCatalog}"
+										${categ.idCompoundCatalog == selectedCateg ? 'selected="selected"' : ''}>${categ.name}</option>
 								</c:forEach>
 							</select>
+
 
 						</div>
 					</div>
@@ -61,7 +66,8 @@
 							Formula: </label>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded">
+								<input id="sno" type="text" class="form-control rounded"
+									value="${compound.molecularFormula}" />
 							</div>
 						</div>
 					</div>
@@ -71,17 +77,16 @@
 							Weight: </label>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded">
+								<input id="sno" type="text" class="form-control rounded"
+									value="${compound.molecularWeight}" />
 							</div>
 						</div>
 					</div>
 
 
-
-
-
 					<input class="list-group-item"
-				style="text-align: center; background-color: lightcoral;color: whitesmoke; margin-top: 10px"  type="submit" name="submit" class="button" value="save">
+						style="text-align: center; background-color: lightcoral; color: whitesmoke; margin-top: 10px"
+						type="submit" name="submit" class="button" value="save">
 
 
 

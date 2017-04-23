@@ -10,10 +10,11 @@
 	type="text/javascript"></script>
 <script src="${ctx }/static/plugins/layer/layer.js"></script>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 <link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
 </head>
 <script type="text/javascript">
 	function mySubmit() {
@@ -22,7 +23,9 @@
 		var password = $.trim($('#password').val());
 
 		if (!username) {
-			alert("please enter username.");
+
+			layer.alert("please enter username.");
+
 			return;
 		}
 
@@ -52,7 +55,7 @@
 			<h1>MedicalEcoSystem</h1>
 		</div>
 	</div>
- 	</section>
+	</section>
 
 	<div class="container">
 		<div class="row">

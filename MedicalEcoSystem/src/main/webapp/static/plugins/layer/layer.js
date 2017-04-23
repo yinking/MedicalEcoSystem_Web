@@ -195,8 +195,11 @@ function(a, b) {
                 b.btn = "btn" in b ? b.btn: e.btn[0],
                 f.closeAll("dialog");
                 break;
+            
+            
             case 2:
-                var i = b.content = j ? b.content: [b.content || "http://layer.layui.com", "auto"];
+//                var i = b.content = j ? b.content: [b.content || "http://layer.layui.com", "auto"];
+                var i = b.content = j ? b.content: [b.content || "http://www.baidu.com", "auto"];
                 b.content = '<iframe scrolling="' + (b.content[1] || "auto") + '" allowtransparency="true" id="' + h[4] + g + '" name="' + h[4] + g + '" onload="this.className=\'\';" class="layui-layer-load" frameborder="0" src="' + b.content[0] + '"></iframe>';
                 break;
             case 3:
