@@ -33,7 +33,7 @@
 							<td>${drug.route}</td>
 							<td><div>
 									<a class=t_link
-										href="${ctx}/editDrug?drugNumber=${drug.drugNumber }">Edit</a>
+										href="${ctx}/editDrug?idDrug=${drug.idDrug }">Edit</a>
 									<a class=t_link href="javascript:myEdit('${u.id }');">Delete</a>
 								</div></td>
 

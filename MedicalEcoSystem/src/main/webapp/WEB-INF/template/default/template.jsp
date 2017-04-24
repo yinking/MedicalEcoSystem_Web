@@ -19,7 +19,7 @@
 	height: 500px;
 	width: 250px;
 	vertical-align: text-top;
-	background-color:#fff;
+	background-color: #fff;
 }
 
 .header {
@@ -55,9 +55,22 @@
 .tb_label {
 	width: 200px;
 }
+
 .tb_input {
 	width: 400px;
 }
+
+.tlb_fontSize {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15px;
+	border: 1px solid #f2f2f2;
+}
+.tlb_fontSize tr:nth-child(even){background-color: #f2f2f2}
+
+
+
+
 </style>
 </head>
 <body>
