@@ -33,24 +33,6 @@ public class CompoundController {
 		return new ModelAndView("new-compound", "categories", categories);
 	}
 
-	// @RequestMapping(value = { "/editCompound" }, method = RequestMethod.GET)
-	// public String editCompoundGet(Model model, HttpServletRequest request) {
-	// // String id = request.getParameter("id");
-	// // if(StringUtils.isNotBlank(id)){
-	// // User user = userService.find(id);
-	// // model.addAttribute("user", user);
-	// //
-	// // }
-	// //
-	// // Map<String, Object> params = new HashMap<String, Object>();
-	// // params.put("deleteFlag", "0");
-	// // List<Role> roles = roleService.findRoles(params);
-	// // model.addAttribute("roles", roles);
-	// System.out.println("editCompound");
-	//
-	// return "dialog/role_edit";
-	// }
-
 	@RequestMapping(value = { "/editCompound" }, method = RequestMethod.GET)
 	public String editCompound(Model model, HttpServletRequest request) {
 		String id = request.getParameter("id");

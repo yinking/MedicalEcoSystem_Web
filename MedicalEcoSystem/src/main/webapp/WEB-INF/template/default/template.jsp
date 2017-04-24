@@ -7,7 +7,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <script src="${ctx }/static/js/jquery-1.8.3.min.js"
 	type="text/javascript"></script>
-	
+
 <title>Default tiles template</title>
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
@@ -17,8 +17,9 @@
 <style type="text/css">
 .leftMenu {
 	height: 500px;
-	width: 300px;
-	vertical-align: text-top
+	width: 250px;
+	vertical-align: text-top;
+	background-color:#fff;
 }
 
 .header {
@@ -49,6 +50,13 @@
 	border-radius: 14px;
 	font-size: 12px;
 	color: #666;
+}
+
+.tb_label {
+	width: 200px;
+}
+.tb_input {
+	width: 400px;
 }
 </style>
 </head>
