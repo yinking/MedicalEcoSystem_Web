@@ -7,13 +7,16 @@
 			<!-- home -->
 			<spring:url value="/home" var="homeUrl" htmlEscape="true" />
 			<a class="list-group-item" href="${homeUrl}"
+				style="text-align: center; background-color: slategray; color: whitesmoke">${centerName }</a>
+			<%-- 			<a class="list-group-item" href="${homeUrl}"
 				style="text-align: center; background-color: slategray; color: whitesmoke">Drug
-				Center</a>
+				Center</a> --%>
 
 
 			<!-- New Compound -->
-			<spring:url value="/newCompound" var="newCompound" htmlEscape="false" />
-			<a class="list-group-item" href="${newCompound}">New/Edit
+			<spring:url value="/saveCompound" var="saveCompound"
+				htmlEscape="false" />
+			<a class="list-group-item" href="${saveCompound}">New/Edit
 				Compound</a>
 
 

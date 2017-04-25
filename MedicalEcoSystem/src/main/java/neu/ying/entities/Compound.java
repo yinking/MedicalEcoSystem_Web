@@ -121,4 +121,14 @@ public class Compound implements java.io.Serializable {
 		this.assignDate = assignDate;
 	}
 
+	@Override
+	public String toString() {
+		return "Compound [idCompound=" + idCompound + ", name=" + name + ", description=" + description
+				+ ", molecularFormula=" + molecularFormula + ", molecularStructure=" + molecularStructure
+				+ ", idCompoundCatalog=" + idCompoundCatalog + ", molecularWeight=" + molecularWeight + ", assignDate="
+				+ assignDate + "]";
+	}
+	
+	
+
 }

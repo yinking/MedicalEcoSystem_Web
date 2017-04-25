@@ -61,16 +61,18 @@
 }
 
 .tlb_fontSize {
-	text-align: center;
-	vertical-align: middle;
 	font-size: 15px;
 	border: 1px solid #f2f2f2;
 }
-.tlb_fontSize tr:nth-child(even){background-color: #f2f2f2}
 
 
+.tlb_fontSize tr:nth-child(even) {
+	background-color: #e8e8e8
+}
 
-
+.tlb_fontSize tr:nth-child(odd) {
+	background-color: #f2f2f2
+}
 </style>
 </head>
 <body>

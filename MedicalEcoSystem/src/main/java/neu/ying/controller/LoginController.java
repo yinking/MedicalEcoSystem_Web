@@ -1,10 +1,7 @@
 package neu.ying.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,19 +26,22 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = { "/login" }, method = RequestMethod.POST)
-	public String loginLogic(Model model, HttpServletRequest request) {
+	public String loginLogic(Model model, HttpServletRequest request, HttpSession session) {
 
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username + "   ###  " + password);
 		UserDao dao = new UserDao();
-
+		String centerName = null;
 		if (dao.authenticate(username, password) == true) {
 			String role = UserDao.getUser().getRole();
+			model.addAttribute("role", role);
 			if ("SystemAdmin".equals(role)) {
+				centerName = "Admin Center";
 				System.out.println("SystemAdmin");
 
 			} else if ("Druggist".equals(role)) {
+				centerName = "Drug Center";
 				System.out.println("Druggist");
 
 			} else {
@@ -49,6 +49,7 @@ public class LoginController {
 			}
 		}
 		System.out.println("lol");
+		session.setAttribute("centerName", centerName);
 		model.addAttribute("message", "lol hi...login");
 		return "home";
 	}

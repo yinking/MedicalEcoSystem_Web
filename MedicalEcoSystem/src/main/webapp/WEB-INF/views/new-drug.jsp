@@ -106,15 +106,15 @@
 				</table>
 
 				<div>
-					<!-- custom widget style="
-								text-align: center; background-color:slategray;-->
+					<!-- custom widget -->
 					<table class="tlb_fontSize"
 						style="height: 80px; background-color: #f2f2f2;">
 
 						<tr>
 							<td style="width: 400px;">
 								<div class="form-group" class="form-group" style="height: 20px;">
-									Compound Category: <select name="col-md-4 control-label">
+									Find Compound By Category: <select
+										name="col-md-4 control-label">
 										<c:forEach var="compoundCateg" items="${compoundCategories}">
 											<option value="${compoundCateg.idCompoundCatalog}">${compoundCateg.name}</option>
 										</c:forEach>
@@ -123,24 +123,35 @@
 
 								</div>
 								<table class="tlb_fontSize">
+									<thead>
+										<tr>
+											<th style="width: 400px;">Compound Name:</th>
+											<th style="width: 400px;">Molecular Form:</th>
 
-									<tr>
-										<td style="width: 400px;">Drug Number:</td>
-										<td style="width: 400px;">Drug Number:</td>
+
+										</tr>
+									</thead>
+									<tbody>
+
+										<c:forEach var="compound" items="${compoundList}">
+											<tr>
+												<td>${compound.name}</td>
+												<td>${compound.molecularFormula}</td>
 
 
-									</tr>
+											</tr>
+										</c:forEach>
+									</tbody>
 								</table>
 
 
 							</td>
 							<!-- center controller  -->
-							<td style="width: 200px;">
+							<td style="width: 50px;">
 								<table class="tlb_fontSize">
 									<tr>
-										<td><input class="list-group-item"
-											style="text-align: center; background-color: slategray; color: whitesmoke; margin-top: 10px"
-											type="submit" name="submit" class="button" value="add"></td>
+										<td><input type="submit" name="submit"
+											class="btn btn-primary" value="add"></td>
 									</tr>
 									<tr>
 										<td>Quantity(gram)</td>
@@ -151,9 +162,8 @@
 											value="${compound.molecularWeight}" /></td>
 									</tr>
 									<tr>
-										<td><input class="list-group-item"
-											style="text-align: center; background-color: slategray; color: whitesmoke; margin-top: 10px"
-											type="submit" name="submit" class="button" value="delete"></td>
+										<td><input type="submit" name="submit"
+											class="btn btn-primary" value="delete" /></td>
 									</tr>
 
 								</table>

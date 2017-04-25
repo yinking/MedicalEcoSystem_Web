@@ -1,97 +1,107 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+		<c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 
 
 		<div class="body">
 
+			<div style="height: 600px; overflow: auto; margin-right: 30px;">
 
-			<div class="modal-body">
-				<div class="line line-dashed b-b line-lg pull-in"></div>
-				<form class="form-horizontal" action="${ctx}/about" method="get">
-
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Compound
-							Name: </label>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded"
-									value="${compound.name}" />
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Structure:
-						</label>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded"
-									value="${compound.molecularStructure}" />
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Description:
-						</label>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded"
-									value="${compound.description}" />
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Catalog: </label>
-						<div class="form-group">
-
-							<select name="col-md-4 control-label">
-								<c:forEach var="categ" items="${categories}">
-									<option value="${categ.idCompoundCatalog}"
-										${categ.idCompoundCatalog == selectedCateg ? 'selected="selected"' : ''}>${categ.name}</option>
-								</c:forEach>
-							</select>
+				<form:form action="${ctx}/saveCompound" commandName="compound"
+					method="post">
 
 
-						</div>
-					</div>
+					<table
+						class="table table-striped table-bordered table-hover table-condensed"
+						style="text-align: center; vertical-align: middle;">
 
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Molecular
-							Formula: </label>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded"
-									value="${compound.molecularFormula}" />
-							</div>
-						</div>
-					</div>
+						<tbody>
 
-					<div class="form-group ">
-						<label for="sno" class="col-md-4 control-label">Molecular
-							Weight: </label>
-						<div class="col-md-4">
-							<div class="form-group">
-								<input id="sno" type="text" class="form-control rounded"
-									value="${compound.molecularWeight}" />
-							</div>
-						</div>
-					</div>
+							<tr>
+								<td class="tb_label">Compound Name:</td>
+								<td class="tb_input"><form:input path="name" type="text"
+										class="form-control rounded" value="${compound.name}" /></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="name" /></font></td>
+
+							</tr>
+							<tr>
+								<td class="tb_label">Structure:</td>
+								<td class="tb_input"><form:input path="molecularStructure"
+										type="text" class="form-control rounded"
+										value="${compound.molecularStructure}" /></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="" /></font></td>
+
+							</tr>
+							<tr>
+								<td class="tb_label">Description:</td>
+								<td class="tb_input"><form:input path="description"
+										type="text" class="form-control rounded"
+										value="${compound.description}" /></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="description" /></font></td>
+
+							</tr>
+							<tr>
+								<td class="tb_label">Catalog:</td>
+								<td class="tb_input" style="text-align: left;"><form:select
+										path="idCompoundCatalog" name="col-md-4 control-label">
+										<c:forEach var="categ" items="${categories}">
+											<option value="${categ.idCompoundCatalog}"
+												${categ.idCompoundCatalog == selectedCateg ? 'selected="selected"' : ''}>${categ.name}</option>
+										</c:forEach>
+									</form:select></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="" /></font></td>
+
+							</tr>
+							<tr>
+								<td class="tb_label">Molecular Formula:</td>
+								<td class="tb_input"><form:input path="molecularFormula"
+										type="text" class="form-control rounded"
+										value="${compound.molecularFormula}" /></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="" /></font></td>
+
+							</tr>
+							<tr>
+								<td class="tb_label">Molecular Weight:</td>
+								<td class="tb_input"><form:input path="molecularWeight"
+										type="text" class="form-control rounded"
+										value="${compound.molecularWeight}" /></td>
+								<td class="tb_input"><font color="red"><form:errors
+											path="" /></font></td>
+
+							</tr>
+							<tr>
+
+								<td><form:input path="idCompound" type="hidden"
+										class="form-control rounded" value="${compound.idCompound}" /></td>
+
+								<td class="tb_label"><input class="btn btn-primary"
+									type="submit" name="submit" value="save" /></td>
 
 
-					<input class="list-group-item"
-						style="text-align: center; background-color: lightcoral; color: whitesmoke; margin-top: 10px"
-						type="submit" name="submit" class="button" value="save">
+							</tr>
 
+						</tbody>
+					</table>
 
-
-				</form>
+				</form:form>
 			</div>
+
+
+
+
+
+
+
 		</div>
 
 
