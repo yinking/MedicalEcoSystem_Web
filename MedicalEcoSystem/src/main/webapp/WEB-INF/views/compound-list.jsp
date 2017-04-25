@@ -1,8 +1,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<script src="${ctx }/static/js/jquery-1.8.3.min.js"
-	type="text/javascript"></script>
+
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
@@ -43,7 +42,7 @@
 							<td><div>
 									<a class=t_link
 										href="${ctx}/editCompound?id=${compound.idCompound }">Edit</a>
-									<a class=t_link href="javascript:myEdit('${u.id }');">Delete</a>
+									<a class=t_link href="javascript:myEdit('${compound.name }');">Delete</a>
 								</div></td>
 
 						</tr>
@@ -53,18 +52,41 @@
 
 		</div>
 
+
+		<script type="text/javascript">
+			function myEdit(name) {
+
+				$.confirm({
+					title : 'Delete Compound',
+					type : 'red',
+					content : 'Are you sure you want to delete Compound '
+							+ name+'?',
+					icon : 'fa fa-question-circle',
+					animation : 'scale',
+					closeAnimation : 'scale',
+					opacity : 0.5,
+					buttons : {
+						'confirm' : {
+							text : 'Proceed',
+							btnClass : 'btn-blue',
+							action : function() {
+
+							}
+						},
+						cancel : function() {
+						},
+
+					}
+				});
+
+			}
+		</script>
 	</tiles:putAttribute>
 
 </tiles:insertDefinition>
 
 
-<script type="text/javascript">
-	function myEdit(id) {
 
-		layer.alert("please enter username." + id);
-
-	}
-</script>
 
 
 

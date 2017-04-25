@@ -131,15 +131,20 @@ public class CompoundController {
 			BindingResult result) {
 
 		System.out.println("toString" + compound.toString());
-
-		validator.validate(compound, result);
-
 		CompoundCatalogDao dao = new CompoundCatalogDao();
 		List<CompoundCatalog> categories = dao.findAll();
 		model.addAttribute("categories", categories);
-		model.addAttribute("compound", new Compound());
 
-		return "new-compound";
+		validator.validate(compound, result);
+		if (result.hasErrors()) {
+			model.addAttribute("selectedCateg", compound.getIdCompoundCatalog());
+			return "new-compound";
+		} else {
+			model.addAttribute("saved", true);
+			model.addAttribute("compound", new Compound());
+			return "new-compound";
+
+		}
 
 	}
 

@@ -3,6 +3,8 @@ package neu.ying.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,7 +52,19 @@ public class LoginController {
 		}
 		System.out.println("lol");
 		session.setAttribute("centerName", centerName);
+		session.setAttribute("user", UserDao.getUser());
 		model.addAttribute("message", "lol hi...login");
 		return "home";
+	}
+
+	@RequestMapping("/logout")
+	public String loginOut(HttpServletRequest request, HttpSession session) {
+
+		if (session != null) {
+			session.invalidate();
+		}
+		System.out.println("   logout##  ");
+
+		return "login";
 	}
 }

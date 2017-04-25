@@ -41,7 +41,8 @@
 			<a class="list-group-item" href="${msgChannel}">Message Channel</a>
 			<!-- logout -->
 
-			<a class="list-group-item"
+			<spring:url value="/logout" var="logout" htmlEscape="true" />
+			<a class="list-group-item" href="${logout}"
 				style="text-align: center; background-color: lightcoral; color: whitesmoke; margin-top: 10px">Logout</a>
 
 

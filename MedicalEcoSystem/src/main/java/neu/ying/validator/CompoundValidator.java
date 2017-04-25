@@ -19,7 +19,7 @@ public class CompoundValidator implements Validator {
 		System.out.println("name" + compound.getName());
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "error.invalid.compound", "Compound Name Required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "error.invalid.compound", "Compound Description Required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "error.invalid.compound", "Compound Name Required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "molecularStructure", "error.invalid.compound", "Compound Molecular Structure Required");
 		// ValidationUtils.rejectIfEmptyOrWhitespace(errors, "actor",
 		// "error.invalid.actor", "Actor Required");
 

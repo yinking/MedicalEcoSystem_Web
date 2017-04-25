@@ -1,12 +1,36 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
 		<c:set var="ctx" value="${pageContext.request.contextPath}" />
 
-
+		<c:if test="${saved == true}">
+		<script type="text/javascript">
+/* 			alert('lol, books added successfully!');
+ */
+				$.alert({
+					title : 'Oh Yeah!',
+					type : 'red',
+					content : 'The Compound has been successfully saved',
+					animation : 'top',
+					closeAnimation : 'bottom',
+					backgroundDismiss : true,
+					buttons : {
+						okay : {
+							text : 'okay',
+							btnClass : 'btn-blue',
+							action : function() {
+								// do nothing
+							}
+						}
+					}
+				});
+			</script>
+		</c:if>
 
 		<div class="body">
 
@@ -24,8 +48,10 @@
 
 							<tr>
 								<td class="tb_label">Compound Name:</td>
+
 								<td class="tb_input"><form:input path="name" type="text"
 										class="form-control rounded" value="${compound.name}" /></td>
+
 								<td class="tb_input"><font color="red"><form:errors
 											path="name" /></font></td>
 
@@ -36,7 +62,7 @@
 										type="text" class="form-control rounded"
 										value="${compound.molecularStructure}" /></td>
 								<td class="tb_input"><font color="red"><form:errors
-											path="" /></font></td>
+											path="molecularStructure" /></font></td>
 
 							</tr>
 							<tr>

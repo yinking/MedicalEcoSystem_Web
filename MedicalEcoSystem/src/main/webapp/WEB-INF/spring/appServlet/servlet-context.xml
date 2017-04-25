@@ -52,7 +52,12 @@
 	</bean>
 
 
-
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="neu.ying.interceptor.AuthenInte"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 
 

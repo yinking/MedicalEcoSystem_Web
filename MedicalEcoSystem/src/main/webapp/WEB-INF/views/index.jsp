@@ -30,19 +30,67 @@
 		<button class="btn btn-primary btn-block example-p-2">Confirmation</button>
 		<p class="text-success">Stacked Confirmations</p>
 	</div>
-	<a class=t_link href="javascript:myEdit('1');">Edit</a>
+	<a class=t_link href="javascript:myDelete('1');">Edit</a>
+	<!-- 	<a class=t_link href="javascript:myEdit('1');">Edit</a> -->
 
 	<div class="DialogContent">
 		<form action="${ctx }/user/ajax/save" id="editForm" method="post">
-			<input type="hidden" name="id" value="${user.id }" /> </br> <input
-				type="text" name="username"
-				data-rule="账号:required;username;remote[${ctx }/user/ajax/validator/username]"
-				value="" />
+
 		</form>
 	</div>
 
 
 </body>
+<script type="text/javascript">
+	function myClick(id) {
+
+		$.alert({
+			title : 'Background dismiss',
+			type : 'blue',
+			content : 'Click outside the modal to close it.',
+			animation : 'top',
+			closeAnimation : 'bottom',
+			backgroundDismiss : true,
+			buttons : {
+				okay : {
+					text : 'okay',
+					btnClass : 'btn-blue',
+					action : function() {
+						// do nothing
+					}
+				}
+			}
+		});
+	}
+</script>
+<script type="text/javascript">
+	function myDelete(id) {
+
+		// confirmation
+		$
+				.confirm({
+					title : 'Delete Compound',
+					content : 'Are you sure you want to delete Compound '+id,
+					icon : 'fa fa-question-circle',
+					animation : 'scale',
+					closeAnimation : 'scale',
+					opacity : 0.5,
+					buttons : {
+						'confirm' : {
+							text : 'Proceed',
+							btnClass : 'btn-blue',
+							action : function() {
+								
+							}
+						},
+						cancel : function() {
+						},
+						
+					}
+				});
+
+	}
+</script>
 <script type="text/javascript">
 	function myEdit(id) {
 
