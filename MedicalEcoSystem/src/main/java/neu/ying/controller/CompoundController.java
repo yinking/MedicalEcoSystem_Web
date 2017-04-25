@@ -33,6 +33,26 @@ public class CompoundController {
 		return new ModelAndView("compound-list", "compounds", compounds);
 	}
 
+	@RequestMapping(value = { "/deleteCompound" }, method = RequestMethod.POST)
+	public String deleteCompound(Model model, HttpServletRequest request) {
+		String id = request.getParameter("id");
+		if (StringUtils.isNotBlank(id)) {
+			System.out.println("id" + id);
+			CompoundDao dao=new CompoundDao();
+			dao.deleteCompoundByID(id);
+//			int idCompound=Integer.parseInt(id);
+//			CompoundDao dao=new CompoundDao();
+//			dao.delete(dao.find(idCompound));
+
+		}
+		List<Compound> compounds = new CompoundDao().findAll();
+		System.out.println(compounds.size() + "");
+		model.addAttribute("compounds", compounds);
+
+		System.out.println("deleteCompound");
+		return "compound-list";
+	}
+
 	// @RequestMapping(value = { "/newCompound" }, method = RequestMethod.GET)
 	// public ModelAndView newCompound(Model model, HttpServletRequest request)
 	// {
@@ -138,13 +158,25 @@ public class CompoundController {
 		validator.validate(compound, result);
 		if (result.hasErrors()) {
 			model.addAttribute("selectedCateg", compound.getIdCompoundCatalog());
-			return "new-compound";
-		} else {
+		} else if(compound.getIdCompound()!=null) {
 			model.addAttribute("saved", true);
+			// save compound
+			CompoundDao compoundDao = new CompoundDao();
+			compoundDao.update(compound);
 			model.addAttribute("compound", new Compound());
-			return "new-compound";
+
+
+		}else{
+			System.out.println("new item" + compound.toString());
+			
+			model.addAttribute("saved", true);
+			// save compound
+			CompoundDao compoundDao = new CompoundDao();
+			compoundDao.update(compound);
+			model.addAttribute("compound", new Compound());
 
 		}
+		return "new-compound";
 
 	}
 

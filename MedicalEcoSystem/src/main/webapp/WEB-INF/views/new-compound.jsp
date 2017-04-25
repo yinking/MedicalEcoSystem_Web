@@ -15,7 +15,7 @@
 				$.alert({
 					title : 'Oh Yeah!',
 					type : 'red',
-					content : 'The Compound has been successfully saved',
+					content : 'The Compound has been successfully saved!',
 					animation : 'top',
 					closeAnimation : 'bottom',
 					backgroundDismiss : true,
@@ -76,13 +76,15 @@
 							</tr>
 							<tr>
 								<td class="tb_label">Catalog:</td>
-								<td class="tb_input" style="text-align: left;"><form:select
+								<td class="tb_input" style="text-align: left;">
+								<form:select
 										path="idCompoundCatalog" name="col-md-4 control-label">
 										<c:forEach var="categ" items="${categories}">
 											<option value="${categ.idCompoundCatalog}"
 												${categ.idCompoundCatalog == selectedCateg ? 'selected="selected"' : ''}>${categ.name}</option>
 										</c:forEach>
-									</form:select></td>
+									</form:select>
+									</td>
 								<td class="tb_input"><font color="red"><form:errors
 											path="" /></font></td>
 

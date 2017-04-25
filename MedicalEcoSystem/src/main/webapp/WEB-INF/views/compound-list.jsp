@@ -42,7 +42,8 @@
 							<td><div>
 									<a class=t_link
 										href="${ctx}/editCompound?id=${compound.idCompound }">Edit</a>
-									<a class=t_link href="javascript:myEdit('${compound.name }');">Delete</a>
+									<a class=t_link
+										href="javascript:myEdit('${compound.idCompound }');">Delete</a>
 								</div></td>
 
 						</tr>
@@ -54,13 +55,13 @@
 
 
 		<script type="text/javascript">
-			function myEdit(name) {
+			function myEdit(id) {
 
 				$.confirm({
 					title : 'Delete Compound',
 					type : 'red',
-					content : 'Are you sure you want to delete Compound '
-							+ name+'?',
+					content : 'Are you sure you want to delete Compound ' + id
+							+ '?',
 					icon : 'fa fa-question-circle',
 					animation : 'scale',
 					closeAnimation : 'scale',
@@ -70,6 +71,16 @@
 							text : 'Proceed',
 							btnClass : 'btn-blue',
 							action : function() {
+
+								$.post("${ctx}/deleteCompound?id=" + id);
+
+								/* $.ajax({
+									url : "${ctx}/deleteCompound",
+									type : "post",
+									success : function(d) {
+										alert(d);
+									}
+								}); */
 
 							}
 						},

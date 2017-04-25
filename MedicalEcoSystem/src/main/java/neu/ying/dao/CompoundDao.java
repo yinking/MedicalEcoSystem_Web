@@ -96,4 +96,23 @@ public class CompoundDao extends AbstractModel<Compound> {
 
 	}
 
+	// didn't use
+	public void deleteCompoundByID(String str) {
+
+		SQLQuery sqlq = null;
+		try {
+			tx = session.beginTransaction();
+			sqlq = session.createSQLQuery("delete from Compound  WHERE  Compound.idCompound=:str");
+			sqlq.setParameter("str", "str");
+
+			sqlq.executeUpdate();
+
+			tx.commit();
+
+		} catch (HibernateException e) {
+			tx.rollback();
+		}
+
+	}
+
 }

@@ -4,7 +4,7 @@
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
 		<c:set var="ctx" value="${pageContext.request.contextPath}" />
-		<div style="height: 600px; overflow: auto;">
+		<div style="height: 600px; overflow: auto;  margin-right: 30px;">
 
 			<div class="J_toolsBar clearfix">
 				<input placeholder="Enter CompoundId" type="text" name="userName"
