@@ -23,7 +23,7 @@
 
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-	
+
 <script src="${ctx }/static/js/jquery-1.8.3.min.js"
 	type="text/javascript"></script>
 
@@ -103,6 +103,20 @@
 .tb_input {
 	width: 400px;
 }
+
+
+
+.tlb_Select  {
+	border: 1px #DDD solid;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.selected {
+	background-color: brown;
+	color: red;
+}
+
 
 .tlb_fontSize {
 	font-size: 15px;

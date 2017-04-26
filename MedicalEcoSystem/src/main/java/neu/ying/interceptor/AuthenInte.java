@@ -26,7 +26,7 @@ public class AuthenInte implements HandlerInterceptor {
 		String uri = request.getRequestURI();
 		// System.out.println("uri--preHandle"+uri);
 		User user = (User) request.getSession().getAttribute("user");
-		if (uri.equals("/MedicalEcoSystem/login") || uri.equals("/MedicalEcoSystem")) {
+		if (uri.equals("/MedicalEcoSystem/login") || uri.equals("/MedicalEcoSystem/index")) {
 			return true;
 		} else if (user == null) {
 			response.sendRedirect(request.getContextPath() + "/login");

@@ -122,7 +122,7 @@
 
 
 								</div>
-								<table class="tlb_fontSize">
+								<table class="tlb_Select" id="table">
 									<thead>
 										<tr>
 											<th style="width: 400px;">Compound Name:</th>
@@ -151,15 +151,15 @@
 								<table class="tlb_fontSize">
 									<tr>
 										<td><input type="submit" name="submit"
-											class="btn btn-primary" value="add"></td>
+											class="btn btn-primary" value="add" onclick="fnselect()"></td>
 									</tr>
 									<tr>
 										<td>Quantity(gram)</td>
 									</tr>
 									<tr>
-										<td><input id="sno" type="number"
+										<td><input id="weight" type="number"
 											class="form-control rounded"
-											value="${compound.molecularWeight}" /></td>
+											value="" /></td>
 									</tr>
 									<tr>
 										<td><input type="submit" name="submit"
@@ -172,11 +172,12 @@
 
 							<td class="tb_fontSize" style="width: 400px;">
 								<div class="form-group" style="height: 20px;"></div>
-								<table class="tlb_fontSize">
+								<table class="tlb_Select" id="tlbTwo">
 
 									<tr>
-										<td style="width: 400px;">Drug Number:</td>
-										<td style="width: 400px;">Drug Number:</td>
+										<td style="width: 400px;">Compound Name:</td>
+										<td style="width: 400px;">Molecular Form:</td>
+										<td style="width: 400px;">Weight:</td>
 
 
 									</tr>
@@ -202,7 +203,22 @@
 
 		</div>
 
+		<script type="text/javascript">
+			var table = document.getElementById('table'), selected = table
+					.getElementsByClassName('selected');
+			table.onclick = highlight;
+			function highlight(e) {
+				if (selected[0])
+					selected[0].className = '';
+				e.target.parentNode.className = 'selected';
+			}
+			function fnselect() {
 
+
+				$("#tlbTwo").find('tbody').append('<tr>').append(
+						$("#table tr.selected ").html()).append('</tr>');
+			}
+		</script>
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>

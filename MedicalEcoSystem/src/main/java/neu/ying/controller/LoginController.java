@@ -15,10 +15,10 @@ import neu.ying.dao.UserDao;
 @Controller
 public class LoginController {
 
-	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/index" }, method = RequestMethod.GET)
 	public String login() {
 
-		return "index";
+		return "index2";
 	}
 
 	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
